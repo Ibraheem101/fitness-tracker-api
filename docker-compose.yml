@@ -2,6 +2,20 @@ services:
   pgdatabase:
     image: postgres:latest
     environment:
-      - POSTGRES_USER=root
-      - POSTGRESS_PASSWORD=root
-      - POSTGRES_DB=fitness_db
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRESS_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - "./fitness_postgres_data:/var/lib/postgresql/data:rw"
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    volumes:
+      - "./data_pgadmin:/var/lib/pgadmin"
+    ports:
+      - "8080:80"
