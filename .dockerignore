@@ -1,0 +1,17 @@
+# Ignore git files
+.git
+.gitignore
+
+# Ignore temporary or build files
+*.pyc
+*.pyo
+*.log
+__pycache__/
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore data or volume directories
+fitness_postgres_data/
+data_pgadmin/
