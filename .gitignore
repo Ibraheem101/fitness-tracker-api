@@ -170,3 +170,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Docker volumes
+fitness_postgres_data/
+data_pgadmin/
