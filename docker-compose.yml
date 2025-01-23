@@ -21,11 +21,12 @@ services:
       - "8080:80"
 
   app:
-    build:
-      context: .
+    build: .
+    container_name: api
     environment:
-      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@pgdatabase:5432/${POSTGRES_DB}
+      - DATABASE_URL=${DATABASE_URL}
     depends_on:
       - pgdatabase
+      - pgadmin
     ports:
       - "5000:5000"
