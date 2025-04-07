@@ -1,8 +1,10 @@
-from datetime import datetime
-from sqlalchemy.ext.declarative import declarative_base
+from typing import cast, Any
+from datetime import datetime, timezone
+from sqlalchemy.orm import relationship, DeclarativeBase
 from sqlalchemy import Column, Integer, Float, DateTime, String, ForeignKey
 
-Base = declarative_base()
+class Base(DeclarativeBase):
+    pass
 
 class User(Base):
     __tablename__ = "users"
@@ -10,8 +12,10 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True, nullable=False)
     email = Column(String, unique=True, nullable=False)
-    password_hash = Column(String, unique=True, nullable=False)
-    created_at = Column(DateTime, default=datetime.now)
+    password_hash = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
+
+    health_metrics = relationship("HealthMetrics", backref="user", cascade="all, delete")
     
 class HealthMetrics(Base):
     __tablename__ = "health_metrics"
@@ -23,4 +27,4 @@ class HealthMetrics(Base):
     calories = Column(Integer)
     weight = Column(Float)
     height = Column(Float)
-    timestamp = Column(DateTime, default=datetime.now)
+    timestamp = Column(DateTime, default=datetime.now(timezone.utc))
