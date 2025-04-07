@@ -1,4 +1,3 @@
-from typing import cast, Any
 from datetime import datetime, timezone
 from sqlalchemy.orm import relationship, DeclarativeBase
 from sqlalchemy import Column, Integer, Float, DateTime, String, ForeignKey
