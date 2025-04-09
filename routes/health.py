@@ -9,22 +9,26 @@ def log_metric():
     data = request.get_json()
     new_metric = HealthMetrics(
         user_id = data['user_id'],
-        steps = data.get('steps'),
-        heart_rate = data.get('heart_rate'),
-        calories = data.get('calories'),
-        weight = data.get('weight')
+        steps = data['steps'],
+        heart_rate = data['heart_rate'],
+        calories_burned = data['calories_burned'],
+        weight = data['weight'],
+        height=data['height']
     )
     session = SessionLocal()
     session.add(new_metric)
     session.commit()
-    session.close()
 
-    return jsonify({
-        "message": "Metric logged successfully!",
-        "data": {
+    response = {
             "id": new_metric.id,
             "user_id": new_metric.user_id,
             "steps": new_metric.steps,
             "timestamp": new_metric.timestamp.isoformat()
         }
+
+    session.close()
+
+    return jsonify({
+        "message": "Metric logged successfully!",
+        "data": response
     }), 201
