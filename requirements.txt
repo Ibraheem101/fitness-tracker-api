@@ -1,3 +1,4 @@
+PyJWT
 flask
 sqlalchemy
 python-dotenv
