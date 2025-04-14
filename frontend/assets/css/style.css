@@ -21,3 +21,20 @@ h1 {
        1px 1px 0 #000;
 }
 
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.1); /* translucent white */
+    backdrop-filter: blur(50px); /* applies blur effect */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    color: white;
+    width: 500px;
+    height: 400px;
+    /* margin-top: 2rem; */
+}
+
