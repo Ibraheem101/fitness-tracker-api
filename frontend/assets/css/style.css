@@ -1,0 +1,12 @@
+body {
+    background-image: url(../img/fitness.jpg);
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 50px;
+}
+
