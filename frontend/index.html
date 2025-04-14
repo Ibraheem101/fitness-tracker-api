@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Fitness Tracker</h1>
-        <p>Project by Ibraheem Kekere-Ekun</p>
-    </div>
+    <header class="page-header">
+        <div class="background-img"></div>
+        <div class="container">
+            <h1 class="title">Fitness Tracker</h1>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="login-section">
+            <div class="login-card">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
     
 </body>
 </html>
