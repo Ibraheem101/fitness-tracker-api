@@ -26,6 +26,7 @@ h1 {
     justify-content: center;
 }
 
+/* Login Card */
 .login-card {
     background: rgba(255, 255, 255, 0.1); /* translucent white */
     backdrop-filter: blur(50px); /* applies blur effect */
@@ -35,6 +36,59 @@ h1 {
     color: white;
     width: 500px;
     height: 400px;
-    /* margin-top: 2rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-header {
+    font-size: 40px;
+}
+
+/* Form Styling */
+form{
+    gap: 1rem;
+    font-size: 20px;
+    width:90%;
+    padding:3vw;
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin-bottom:5px;
+    position:relative;
+    border-bottom:1px solid #ddd;
+}
+
+input{
+    width:100%;
+    padding:10px 0px;
+    margin-top:20px;
+    border:none;
+    outline:none;
+    opacity: 1;
+    background: transparent;
+    color: white; 
+    border-bottom: 1px solid #ccc;
+}
+
+input::placeholder{
+    color: transparent;
+}
+
+span{
+    position:absolute;
+    top: 0px;
+    left:0px;
+    transform:translateY(30px);
+    font-size:0.825em;
+    transition-duration:300ms;
+}
+
+label:focus-within > span,
+input:not(:placeholder-shown) + span{
+    color:rgba(255, 255, 255, 0.712);
+    transform:translateY(0px);
 }
 
