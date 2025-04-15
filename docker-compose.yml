@@ -25,6 +25,7 @@ services:
     container_name: api
     environment:
       - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
     depends_on:
       - pgdatabase
       - pgadmin
