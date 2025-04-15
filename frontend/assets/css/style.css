@@ -92,3 +92,13 @@ input:not(:placeholder-shown) + span{
     transform:translateY(0px);
 }
 
+/* Button */
+button{
+    padding:15px 0px; 
+    margin-top:20px;
+    background:rgb(71, 70, 71);
+    color:#fff;
+    border:1px solid rgb(233, 228, 233);
+    cursor:pointer;
+    border-radius:3px;
+}
