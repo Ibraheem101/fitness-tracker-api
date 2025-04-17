@@ -1,6 +1,7 @@
 PyJWT
 flask
 sqlalchemy
+flask-cors
 python-dotenv
 psycopg2-binary
 passlib[bcrypt]
