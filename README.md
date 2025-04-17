@@ -25,6 +25,7 @@ fitness-tracker-api/
 ├── routes/
 │   ├── health.py              # Routes for logging metrics
 │   └── auth.py                # Routes for registering users
+│   └── login.py               # Routes for user login
 ├── utils/
 │   ├── security.py            # Password hashing & verification
 │   └── jwt_handler.py         # JWT generation and decoding
