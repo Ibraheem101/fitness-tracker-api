@@ -19,7 +19,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
             // save token, maybe redirect
             localStorage.setItem("token", data.token);
             alert("Login successful!");
-            // window.location.href = "/dashboard.html"; // to do later
+            window.location.href = "../frontend/dashboard.html";
         } else {
             alert(data.error || "Login failed");
         }
