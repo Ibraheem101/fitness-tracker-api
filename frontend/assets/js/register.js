@@ -4,7 +4,12 @@ document.getElementById("login-form").addEventListener("submit", async function 
     const email = document.getElementById("email").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+    const verify_password = document.getElementById("verify_password").value;
 
+    if (password !== verify_password) {
+        alert("Passwords do not match");
+        return;
+    }
     try {
         const response = await fetch("http://127.0.0.1:5000/api/create-user", {
             method: "POST",
