@@ -4,14 +4,14 @@ from utils.security import hash_password #type:ignore
 from database.connection import SessionLocal #type:ignore
 
 auth_bp = Blueprint('auth', __name__)
-@auth_bp.route('/create-test-user', methods=['POST'])
+@auth_bp.route('/create-user', methods=['POST'])
 
 def create_user():
     data = request.get_json()
     user = User(
         username = data['username'],
         email = data['email'],
-        password_hash = hash_password(data['password_hash'])
+        password_hash = hash_password(data['password'])
     )
     session = SessionLocal()
     session.add(user)
