@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-    
+    <header class="page-header">
+        <div class="background-img"></div>
+        <div class="container">
+            <h1 class="title">Fitness Tracker</h1>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="login-section">
+            <div class="login-card">
+                <h2 class="card-header">Register</h2>
+                <form id="login-form" class="styled-form">
+                    <label for="email">
+                        <input type="email" id="email" placeholder="Email" required>
+                        <span>Email</span>
+                    </label>
+                    <label for="username">
+                        <input type="username" id="username" placeholder="Username" required>
+                        <span>Username</span>
+                    </label>
+                    <label for="password">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <span>Password</span>
+                    </label>
+                    <label for="password">
+                        <input type="password" id="verify_password" placeholder="Password" required>
+                        <span>Verify Password</span>
+                    </label>
+                    <button type="submit" class="login-btn">Register</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/register.js"></script>
 </body>
 </html>
