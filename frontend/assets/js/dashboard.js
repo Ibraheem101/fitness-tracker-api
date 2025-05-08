@@ -1,6 +1,25 @@
-document.addEventListener("DOMContentLoaded", async () =>{
+document.addEventListener("DOMContentLoaded", async function() {
+    const navButtons = document.querySelectorAll(".nav-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    navButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const sectionId = this.getAttribute("data-section");
+
+            tabContents.forEach(content => {
+                content.classList.remove("active");
+            });
+
+            document.getElementById(sectionId).classList.add("active");
+        });
+    });
+
+    // Fetch and display username
+    const usernameDisplay = document.getElementById("username");
     const token = localStorage.getItem("token");
+
     if (!token) {
+        alert("Timed out")
         window.location.href = "../frontend/index.html";
         return;
     }
@@ -14,13 +33,12 @@ document.addEventListener("DOMContentLoaded", async () =>{
 
         const data = await response.json();
         if (response.ok) {
-            document.getElementById("username-display").textContent = `Hi, Welcome ${data.username}`;
+            usernameDisplay.textContent = data.username;
         } else {
-            alert("User not found");
+            usernameDisplay.textContent = "User not found";
         }
     } catch (error) {
         console.error("Failed to fetch user:", error);
         alert("Error loading user info");
     }
-
 });
