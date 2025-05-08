@@ -89,3 +89,5 @@ docker-compose up --build
 ---
 ### Screenshots
 <img src="https://github.com/Ibraheem101/fitness-tracker-api/blob/main/images/register.png" alt="screenshot" height="250" width="150">
+
+<img src="https://github.com/Ibraheem101/fitness-tracker-api/blob/main/images/dashboard1.png" alt="screenshot" height="250" width="150">
