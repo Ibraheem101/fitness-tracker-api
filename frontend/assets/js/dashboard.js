@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", async function() {
         });
     });
 
+    // Logout functionality
+    document.getElementById("logout-btn").addEventListener("click", function() {
+        localStorage.removeItem("token");
+        window.location.href = "../frontend/index.html";
+    });
+
     // Fetch and display username
     const usernameDisplay = document.getElementById("username");
     const token = localStorage.getItem("token");
