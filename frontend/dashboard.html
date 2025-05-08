@@ -9,9 +9,14 @@
 <body>
     <header class="page-header">
         <div class="container">
-            <h1 id="username-display">Loading ...</h1>
-        </div>   
-          
+            <h1 id="username-display">Welcome, <span id="username">Loading...</span>!</h1>
+            <nav class="dashboard-nav">
+                <button class="nav-btn" data-section="about">About</button>
+                <button class="nav-btn" data-section="log-metrics">Log Metrics</button>
+                <button class="nav-btn" data-section="track-metrics">Track Metrics</button>
+                <button class="nav-btn" data-section="logout" id="logout-btn">Logout</button>
+            </nav>
+        </div>
     </header>
     <script src="assets/js/dashboard.js"></script>
 </body>
